@@ -1,0 +1,48 @@
+/*
+ * ar6ix - Purple Neon Theme
+ * Gamepad Viewer custom CSS
+ *
+ * Upload this file to a public HTTPS host, then paste the RAW file URL
+ * into Gamepad Viewer's "Custom CSS URL" field.
+ */
+
+/* Purple/neon color treatment for common Gamepad Viewer controller elements */
+.controller,
+.controller * {
+  --ar6ix-purple: #8b00ff;
+  --ar6ix-neon: #c45bff;
+}
+
+/* Add a subtle purple neon glow to pressed controls */
+.controller .pressed,
+.controller .button.pressed,
+.controller .face.pressed,
+.controller .bumper.pressed,
+.controller .trigger.pressed {
+  filter: brightness(1.25) drop-shadow(0 0 6px #bd45ff);
+}
+
+/*
+ * Brand label.
+ * Exact positioning depends on the controller skin's HTML structure.
+ * This places the label near the top-center of the controller container.
+ */
+.controller {
+  position: relative;
+}
+
+.controller::after {
+  content: "ar6ix";
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #d9a0ff;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-shadow: 0 0 5px #a100ff, 0 0 12px #8b00ff;
+  pointer-events: none;
+  z-index: 999;
+}
